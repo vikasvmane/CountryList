@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MindBodyHW</string>
+    <string name="error_msg_no_data_available">No data available</string>
+    <string name="try_again">Try again</string>
+</resources>
