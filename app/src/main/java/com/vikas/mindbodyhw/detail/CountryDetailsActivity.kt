@@ -45,7 +45,8 @@ class CountryDetailsActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(CountryDetailsViewModel::class.java)
         setObservers()
-        viewModel.getProvinces(selectedCountryId)
+        if (viewModel.liveDataProvinceResponse.value.isNullOrEmpty())
+            viewModel.getProvinces(selectedCountryId)
     }
 
     private fun setObservers() {

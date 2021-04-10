@@ -44,7 +44,8 @@ class CountryListActivity : AppCompatActivity(), OnCountryItemClickListener {
 
         viewModel = ViewModelProviders.of(this).get(CountryListViewModel::class.java)
         setObservers()
-        viewModel.getCountryList()
+        if (viewModel.liveDataCountryList.value.isNullOrEmpty())
+            viewModel.getCountryList()
     }
 
     private fun setObservers() {
